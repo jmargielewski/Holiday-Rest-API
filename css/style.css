@@ -1,3 +1,39 @@
-.color{
-    color: coral;
+.wrapper{
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
 }
+
+.appSearch{
+    width: 300px;
+    border: 2px solid coral;
+    background: #4682b4;
+}
+
+.inputSearch{
+    width: 260px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+}
+
+.buttonSearch{
+    background: #f4a460;
+    color: #4682b4;
+    width: 40px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+}
+
+/*.app ul {
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+.app ul li {
+    border-bottom: 1px solid white;
+    list-style-type: none;
+    min-height: 25px;
+    padding: 11px 0 10px 10px;*/
