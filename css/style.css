@@ -1,14 +1,13 @@
 .wrapper{
     margin: 0 auto;
     width: 1200px;
-    display: flex;
-    justify-content: center;
 }
 
 .appSearch{
     width: 300px;
     border: 2px solid coral;
     background: #4682b4;
+    margin: 0 auto;
 }
 
 .inputSearch{
@@ -37,3 +36,16 @@
     list-style-type: none;
     min-height: 25px;
     padding: 11px 0 10px 10px;*/
+
+
+.ulHolidays{
+    width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.ulHolidays li{
+    margin: 0;
+    padding: 0;
+}
