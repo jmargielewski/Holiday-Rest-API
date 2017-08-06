@@ -1,6 +1,6 @@
 $(function() {
 
-    var pl = "CA";
+    var pl = "PL";
     let urlAPI = `https://holidayapi.com/v1/holidays?key=b8a9beec-2f3e-4319-b0f7-68ee562d49df&country=${pl}&year=2016&month=05`;
 
 
@@ -13,6 +13,14 @@ $(function() {
 
     let list;
     let predefinedValues;
+
+    button.text('Search');
+    app.append(input);
+    app.append(button);
+    wrapper.append(app);
+    $('body').append(wrapper);
+
+    ////////////////////////
 
     predefinedValues = [
         "AR",
@@ -96,12 +104,52 @@ $(function() {
         "ZW",
     ];
 
-    button.text('Search');
+    let createList = function ( values ){
+        if ( list ){
+            app.remove( list );
+        }
 
-    app.append(input);
-    app.append(button);
-    wrapper.append(app);
-    $('body').append(wrapper);
+        let ulInput = $('<ul>');
+
+        values.forEach( function ( value ){
+            let li = $('<li>');
+            li.text(value);
+            ulInput.append(li);
+        });
+        return ulInput;
+
+    };
+
+    let manageList = function ( string ){
+        let showedValues = predefinedValues.filter( function ( values ){
+            return values.indexOf( string ) == 0;
+        });
+        if ( showedValues.length ){
+            list = createList( showedValues );
+            app.append( list );
+        } else if ( list != null ){
+            app.remove( list );
+            list = null;
+        }
+    };
+
+    let onType = function(){
+        manageList(this.value);
+    };
+
+
+    let clearList = function(){
+        list.addClass('hide');
+    };
+
+    input.on('blur', clearList);
+
+    input.on('keyup', onType);
+
+
+    ////////////////////////
+
+
 
 
     function createListHolidays( holidays ) {

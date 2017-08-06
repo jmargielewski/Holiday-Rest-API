@@ -1,17 +1,17 @@
 .wrapper{
     margin: 0 auto;
-    width: 1200px;
+    width: 600px;
 }
 
 .appSearch{
-    width: 300px;
+    width: 100%;
     border: 2px solid coral;
     background: #4682b4;
     margin: 0 auto;
 }
 
 .inputSearch{
-    width: 260px;
+    width: 80%;
     height: 30px;
     padding: 0;
     border: 0;
@@ -20,32 +20,28 @@
 .buttonSearch{
     background: #f4a460;
     color: #4682b4;
-    width: 40px;
+    width: 20%;
     height: 30px;
     padding: 0;
     border: 0;
 }
 
-/*.app ul {
-    color: white;
-    padding: 0;
-    margin: 0;
-}
-.app ul li {
-    border-bottom: 1px solid white;
-    list-style-type: none;
-    min-height: 25px;
-    padding: 11px 0 10px 10px;*/
+
 
 
 .ulHolidays{
-    width: 500px;
+    width: 100%;
     margin: 0 auto;
     padding: 0;
     list-style: none;
+
 }
 
 .ulHolidays li{
     margin: 0;
     padding: 0;
+}
+
+.hide{
+    display: none;
 }
