@@ -9,10 +9,26 @@ $(function() {
         let userValueOfDate = monthInput.val();
         let userValueOfYear = userValueOfDate.slice(0,4);
         let userValueOfMonth = userValueOfDate.slice(5,7);
-        let urlAPI = `https://holidayapi.com/v1/holidays?key=b8a9beec-2f3e-4319-b0f7-68ee562d49df&country=${userValueOfCountry}&year=${userValueOfYear}&month=${userValueOfMonth}`;
-        
-        createList( urlAPI );
 
+        let urlAPI = `https://holidayapi.com/v1/holidays?key=b8a9beec-2f3e-4319-b0f7-68ee562d49df&country=${userValueOfCountry}&year=${userValueOfYear}&month=${userValueOfMonth}`;
+
+        if( userValueOfCountry.length === 0 ){
+            $('.inputsWrap').nextAll().remove();
+            let infoEmpty = $('<p>', {class: 'errorEmptyValue'});
+            let infoEmptyBtn = $('<button>', {class: 'errorEmptyValueBtn'});
+            infoEmptyBtn.text("List of Abbreviations");
+            infoEmpty.text('Wrong name of the Country. If u need help, click on button "List of Abbreviations"');
+            infoEmpty.append(infoEmptyBtn);
+            $('.inputsWrap').after(infoEmpty);
+        } else if ( userValueOfDate.length === 0 ){
+            $('.inputsWrap').nextAll().remove();
+            let infoEmpty = $('<p>', {class: 'errorEmptyValue'});
+            infoEmpty.text('Please enter a correct date: (dd-mm-yyyy)');
+            $('.inputsWrap').after(infoEmpty);
+        } else {
+            $('.inputsWrap').nextAll().remove();
+            createList( urlAPI );
+        }
     };
 
     let createList = function( urlAPI ){

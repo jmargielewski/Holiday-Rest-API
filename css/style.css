@@ -83,7 +83,22 @@ section.inputs .inputsWrap .inputsDivBtn{
 
 .errorEmptyValue{
     color: red;
-    font-size: 10px;
+    font-size: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.errorEmptyValueBtn{
+    border: 1px solid red;
+    color: red;
+    background: none;
+    height: 30px;
+    width: 250px;
+    margin-top:25px;
+    font-size: 12px;
+}
+.errorEmptyValueBtn:hover{
+    cursor: pointer;
 }
 
 section.holidays{
