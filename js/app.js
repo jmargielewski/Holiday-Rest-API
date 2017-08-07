@@ -5,9 +5,14 @@ $(function() {
     let changeCountry = function (){
         let countryInput = $('#inputText');
         let monthInput = $('#inputMonth');
-        let userValueofInput = countryInput.val().toUpperCase();
-        let urlAPI = `https://holidayapi.com/v1/holidays?key=b8a9beec-2f3e-4319-b0f7-68ee562d49df&country=${userValueofInput}&year=2016&month=01`;
+        let userValueOfCountry = countryInput.val().toUpperCase();
+        let userValueOfDate = monthInput.val();
+        let userValueOfYear = userValueOfDate.slice(0,4);
+        let userValueOfMonth = userValueOfDate.slice(5,7);
+        let urlAPI = `https://holidayapi.com/v1/holidays?key=b8a9beec-2f3e-4319-b0f7-68ee562d49df&country=${userValueOfCountry}&year=${userValueOfYear}&month=${userValueOfMonth}`;
+        
         createList( urlAPI );
+
     };
 
     let createList = function( urlAPI ){

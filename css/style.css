@@ -81,6 +81,11 @@ section.inputs .inputsWrap .inputsDivBtn{
     color: #ffaa07;
 }
 
+.errorEmptyValue{
+    color: red;
+    font-size: 10px;
+}
+
 section.holidays{
     margin: 0 auto;
     width: 600px;
