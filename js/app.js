@@ -4,7 +4,7 @@ $(function() {
 
     $('.btnListCountry').on('click', function(){
         $('.listCountrys').toggleClass('listCountryshidden');
-    });
+    }); 
 
     let changeCountry = function (){
         let countryInput = $('#inputText');
