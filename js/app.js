@@ -3,7 +3,7 @@ $(function() {
     const inputsDivBtn = $('.inputsDivBtn');
 
     $('.btnListCountry').on('click', function(){
-        $('.listCountrys').toggleClass('listCountryshidden');
+        $('.listCountries').toggleClass('listCountriesHidden');
     });
 
     let changeCountry = function (){

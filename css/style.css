@@ -48,7 +48,7 @@ section.inputs p.infoAboutList span.btnListCountry:hover{
     cursor: pointer;
     text-decoration: underline;
 }
-section.inputs .listCountrys {
+section.inputs .listCountries {
     background-color: #262f39;
     border: 2px solid #f2ebf0;
     border-radius: 2px;
@@ -58,19 +58,19 @@ section.inputs .listCountrys {
     padding: 20px;
     box-shadow: 11px 11px 34px 6px rgba(38,47,57,0.55);
 }
-.listCountryshidden{
+.listCountriesHidden{
     display: none;
 }
-section.inputs .listCountrys h3{
+section.inputs .listCountries h3{
     padding-bottom: 10px;
     font-size: 16px;
 }
-section.inputs .listCountrys div{
+section.inputs .listCountries div{
     display: inline-block;
     font-size: 12px;
     width: 20%;
 }
-section.inputs .listCountrys div b{
+section.inputs .listCountries div b{
     color: #ffaa07;
 }
 
