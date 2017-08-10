@@ -35,6 +35,45 @@ section.inputs h2{
     color: #262f39;
     font-size: 30px;
 }
+section.inputs p.infoAboutList{
+    text-align: center;
+    color: #262f39;
+    font-size: 13px;
+    padding-bottom: 5px;
+}
+section.inputs p.infoAboutList span.btnListCountry{
+    font-weight: bold;
+}
+section.inputs p.infoAboutList span.btnListCountry:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+section.inputs .listCountrys {
+    background-color: #262f39;
+    border: 2px solid #f2ebf0;
+    border-radius: 2px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #f2ebf0;
+    padding: 20px;
+    box-shadow: 11px 11px 34px 6px rgba(38,47,57,0.55);
+}
+.listCountryshidden{
+    display: none;
+}
+section.inputs .listCountrys h3{
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+section.inputs .listCountrys div{
+    display: inline-block;
+    font-size: 12px;
+    width: 20%;
+}
+section.inputs .listCountrys div b{
+    color: #ffaa07;
+}
+
 section.inputs .inputsWrap {
     display: flex;
     justify-content:space-around;;
@@ -48,18 +87,12 @@ section.inputs .inputsWrap {
     margin: 0 auto;
     box-shadow: 11px 11px 34px 6px rgba(38,47,57,0.55);
 }
-section.inputs .inputsWrap .inputsDivCountry{
-    /*margin: 0 10px;*/
 
-}
-section.inputs .inputsWrap .inputsDivMonth{
-    /*margin: 0 5px;*/
-}
 section.inputs .inputsWrap label {
     display: block;
     font-size: 12px;
     padding: 5px 0;
-    color: #ffffff;
+    color: #f2ebf0;
 
 }
 section.inputs .inputsWrap input {
@@ -82,23 +115,18 @@ section.inputs .inputsWrap .inputsDivBtn{
 }
 
 .errorEmptyValue{
-    color: red;
+    color: #ff0000;
     font-size: 15px;
     padding: 30px;
     text-align: center;
 }
 
-.errorEmptyValueBtn{
-    border: 1px solid red;
-    color: red;
-    background: none;
-    height: 30px;
-    width: 250px;
-    margin-top:25px;
-    font-size: 12px;
-}
-.errorEmptyValueBtn:hover{
-    cursor: pointer;
+.divAbbreviations{
+    border: 1px solid #ff0000;
+    margin: 0 auto;
+    height: 200px;
+    width: 600px;
+
 }
 
 section.holidays{

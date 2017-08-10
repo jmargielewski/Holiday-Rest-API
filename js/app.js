@@ -2,6 +2,10 @@ $(function() {
 
     const inputsDivBtn = $('.inputsDivBtn');
 
+    $('.btnListCountry').on('click', function(){
+        $('.listCountrys').toggleClass('listCountryshidden');
+    });
+
     let changeCountry = function (){
         let countryInput = $('#inputText');
         let monthInput = $('#inputMonth');
@@ -15,10 +19,7 @@ $(function() {
         if( userValueOfCountry.length === 0 ){
             $('.inputsWrap').nextAll().remove();
             let infoEmpty = $('<p>', {class: 'errorEmptyValue'});
-            let infoEmptyBtn = $('<button>', {class: 'errorEmptyValueBtn'});
-            infoEmptyBtn.text("List of Abbreviations");
-            infoEmpty.text('Wrong name of the Country. If u need help, click on button "List of Abbreviations"');
-            infoEmpty.append(infoEmptyBtn);
+            infoEmpty.text('Wrong name of the Country.');
             $('.inputsWrap').after(infoEmpty);
         } else if ( userValueOfDate.length === 0 ){
             $('.inputsWrap').nextAll().remove();
