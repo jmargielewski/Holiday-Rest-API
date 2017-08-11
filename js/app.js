@@ -7,86 +7,26 @@ $(function() {
 
         let wrapListHints = $('.listCountries')
         let listHints = [
-            'AR Argentina',
-            'AO Angola',
-            'AT Austria',
-            'AU Australia',
-            'AW Aruba',
-            'AX Åland Islands',
-            'BA Bosnia and Herzegovina',
-            'BE Belgium',
-            'BG Bulgaria',
-            'BO Bolivia',
-            'BR Brazil',
-            'BS The Bahamas',
-            'CA Canada',
-            'CH Switzerland',
-            'CN China',
-            'CO Colombia',
-            'CR Costa Rica',
-            'CU Cuba',
-            'CZ Czech Republic',
-            'DE Germany',
-            'DK Denmark',
-            'DO Dominican Republic',
-            'EC Ecuador',
-            'ES Spain',
-            'FI Finland',
-            'FR France',
-            'GB United Kingdom',
-            'GB-ENG England',
-            'GB-NIR Northern Ireland',
-            'GB-SCT Scotland',
-            'GB-WLS Wales',
-            'GR Greece',
-            'GT Guatemala',
-            'HK Hong Kong',
-            'HN Honduras',
-            'HR Croatia',
-            'HU Hungary',
-            'ID Indonesia',
-            'IE Ireland',
-            'IN India',
-            'IL Israel',
-            'IS Iceland',
-            'IT Italy',
-            'JP Japan',
-            'KZ Kazakhstan',
-            'LS Lesotho',
-            'LU Luxembourg',
-            'MG Madagascar',
-            'MQ Martinique',
-            'MT Malta',
-            'MU Mauritius',
-            'MX Mexico',
-            'MZ Mozambique',
-            'NG Nigeria',
-            'NL Netherlands',
-            'NO Norway',
-            'PE Peru',
-            'PK Pakistan',
-            'PH Philippines',
-            'PL Poland',
-            'PR Puerto Rico',
-            'PT Portugal',
-            'PY Paraguay',
-            'RE Réunion',
-            'RO Romania',
-            'RU Russia',
-            'SC Seychelles',
-            'SE Sweden',
-            'SG Singapore',
-            'SI Slovenia',
-            'ST Sao Tome and Principe',
-            'SK Slovakia',
-            'TN Tunisia',
-            'TR Turkey',
-            'UA Ukraine',
-            'US United States',
-            'UY Uruguay',
-            'VE Venezuela',
-            'ZA South Africa',
-            'ZW Zimbabwe',
+            'AR Argentina','AO Angola','AT Austria','AU Australia',
+            'AW Aruba','AX Åland Islands','BA Bosnia and Herzegovina','BE Belgium',
+            'BG Bulgaria','BO Bolivia','BR Brazil','BS The Bahamas','CA Canada',
+            'CH Switzerland','CN China','CO Colombia','CR Costa Rica',
+            'CU Cuba','CZ Czech Republic','DE Germany','DK Denmark',
+            'DO Dominican Republic','EC Ecuador','ES Spain','FI Finland',
+            'FR France','GB United Kingdom','GB-ENG England','GB-NIR Northern Ireland',
+            'GB-SCT Scotland','GB-WLS Wales','GR Greece','GT Guatemala',
+            'HK Hong Kong','HN Honduras','HR Croatia','HU Hungary',
+            'ID Indonesia','IE Ireland','IN India','IL Israel',
+            'IS Iceland','IT Italy','JP Japan','KZ Kazakhstan',
+            'LS Lesotho','LU Luxembourg','MG Madagascar','MQ Martinique',
+            'MT Malta','MU Mauritius','MX Mexico','MZ Mozambique',
+            'NG Nigeria','NL Netherlands','NO Norway','PE Peru',
+            'PK Pakistan','PH Philippines','PL Poland','PR Puerto Rico',
+            'PT Portugal','PY Paraguay','RE Réunion','RO Romania',
+            'RU Russia','SC Seychelles','SE Sweden','SG Singapore',
+            'SI Slovenia','ST Sao Tome and Principe','SK Slovakia','TN Tunisia',
+            'TR Turkey','UA Ukraine','US United States','UY Uruguay',
+            'VE Venezuela','ZA South Africa','ZW Zimbabwe',
         ];
 
         [...listHints].forEach( function( listItem ){
@@ -103,6 +43,7 @@ $(function() {
             countryName.prepend(countryShortName);
             wrapListHints.append(countryName);
         });
+
         wrapListHints.slideToggle('listCountriesHidden');
     };
 
@@ -116,7 +57,9 @@ $(function() {
 
         let urlAPI = `https://holidayapi.com/v1/holidays?key=b8a9beec-2f3e-4319-b0f7-68ee562d49df&country=${userValueOfCountry}&year=${userValueOfYear}&month=${userValueOfMonth}`;
 
-        if( userValueOfCountry.length === 0 ){
+
+
+        if( userValueOfCountry.length < 2 ){
             $('.inputsWrap').nextAll().remove();
             let infoEmpty = $('<p>', {class: 'errorEmptyValue'});
             infoEmpty.text('Wrong name of the Country.');
@@ -127,6 +70,11 @@ $(function() {
             infoEmpty.text('Please enter a correct date: (dd-mm-yyyy)');
             $('.inputsWrap').after(infoEmpty);
         } else {
+
+            if ( $('.listCountries').css('display') === "block" ){
+                $('.listCountries').slideUp();
+            };
+
             $('.inputsWrap').nextAll().remove();
             createList( urlAPI );
         }
