@@ -55,12 +55,10 @@ section.inputs .listCountries {
     text-align: center;
     margin-bottom: 40px;
     color: #f2ebf0;
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 60px;
     box-shadow: 11px 11px 34px 6px rgba(38,47,57,0.55);
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;*/
+    position: relative;
 }
 section.inputs .listCountriesHidden {
     display: none;
@@ -70,7 +68,7 @@ section.inputs .listCountries h3{
     font-size: 16px;
     flex-basis: 100%;
 }
-section.inputs .listCountries div{
+section.inputs .listCountries div.countryNamesWraper div{
     display: inline-block;
     text-align: left;
     font-size: 12px;
@@ -79,6 +77,23 @@ section.inputs .listCountries div{
 }
 section.inputs .listCountries div b{
     color: #ffaa07;
+}
+
+section.inputs .listCountriesCloseBtn{
+    position: absolute;
+    bottom: 20px;
+    left: 300px;
+    width: 80px;
+    margin-left: -40px;
+    font-size: 11px;
+    border: 1px solid #ffaa07;
+    border-radius: 11px;
+    padding: 3px;
+    letter-spacing: 1px;
+}
+section.inputs .listCountriesCloseBtn:hover{
+    cursor: pointer;
+
 }
 
 section.inputs .inputsWrap {

@@ -2,10 +2,15 @@ $(function() {
 
     const inputsDivBtn = $('.inputsDivBtn');
     const btnHintList = $('.btnListCountry');
+    const listCountriesCloseBtn = $('.listCountriesCloseBtn');
+
 
     let createHintList = function (){
 
-        let wrapListHints = $('.listCountries')
+
+
+        let wrapListHints = $('.listCountries');
+        let countryNamesWraper = $('<div>', { class: 'countryNamesWraper'});
         let listHints = [
             'AR Argentina','AO Angola','AT Austria','AU Australia',
             'AW Aruba','AX Åland Islands','BA Bosnia and Herzegovina','BE Belgium',
@@ -41,11 +46,16 @@ $(function() {
                 countryName.text( listItem.slice(3,30) );
             }
             countryName.prepend(countryShortName);
-            wrapListHints.append(countryName);
+            countryNamesWraper.append(countryName);
         });
-
+        wrapListHints.append(countryNamesWraper);
         wrapListHints.slideToggle('listCountriesHidden');
     };
+
+    let removeHintList = function(){
+            $('.listCountries').slideUp();
+            $('.countryNamesWraper').remove();
+    }
 
     let changeCountry = function (){
         let countryInput = $('#inputText');
@@ -108,5 +118,5 @@ $(function() {
 
     inputsDivBtn.on('click', changeCountry);
     btnHintList.on('click', createHintList);
-
+    listCountriesCloseBtn.on('click', removeHintList);
 });
