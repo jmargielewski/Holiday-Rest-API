@@ -1,10 +1,110 @@
 $(function() {
 
     const inputsDivBtn = $('.inputsDivBtn');
+    const btnHintList = $('.btnListCountry');
 
-    $('.btnListCountry').on('click', function(){
-        $('.listCountries').toggleClass('listCountriesHidden');
-    });
+    let createHintList = function (){
+
+        let wrapListHints = $('.listCountries')
+        let listHints = [
+            'AR Argentina',
+            'AO Angola',
+            'AT Austria',
+            'AU Australia',
+            'AW Aruba',
+            'AX Åland Islands',
+            'BA Bosnia and Herzegovina',
+            'BE Belgium',
+            'BG Bulgaria',
+            'BO Bolivia',
+            'BR Brazil',
+            'BS The Bahamas',
+            'CA Canada',
+            'CH Switzerland',
+            'CN China',
+            'CO Colombia',
+            'CR Costa Rica',
+            'CU Cuba',
+            'CZ Czech Republic',
+            'DE Germany',
+            'DK Denmark',
+            'DO Dominican Republic',
+            'EC Ecuador',
+            'ES Spain',
+            'FI Finland',
+            'FR France',
+            'GB United Kingdom',
+            'GB-ENG England',
+            'GB-NIR Northern Ireland',
+            'GB-SCT Scotland',
+            'GB-WLS Wales',
+            'GR Greece',
+            'GT Guatemala',
+            'HK Hong Kong',
+            'HN Honduras',
+            'HR Croatia',
+            'HU Hungary',
+            'ID Indonesia',
+            'IE Ireland',
+            'IN India',
+            'IL Israel',
+            'IS Iceland',
+            'IT Italy',
+            'JP Japan',
+            'KZ Kazakhstan',
+            'LS Lesotho',
+            'LU Luxembourg',
+            'MG Madagascar',
+            'MQ Martinique',
+            'MT Malta',
+            'MU Mauritius',
+            'MX Mexico',
+            'MZ Mozambique',
+            'NG Nigeria',
+            'NL Netherlands',
+            'NO Norway',
+            'PE Peru',
+            'PK Pakistan',
+            'PH Philippines',
+            'PL Poland',
+            'PR Puerto Rico',
+            'PT Portugal',
+            'PY Paraguay',
+            'RE Réunion',
+            'RO Romania',
+            'RU Russia',
+            'SC Seychelles',
+            'SE Sweden',
+            'SG Singapore',
+            'SI Slovenia',
+            'ST Sao Tome and Principe',
+            'SK Slovakia',
+            'TN Tunisia',
+            'TR Turkey',
+            'UA Ukraine',
+            'US United States',
+            'UY Uruguay',
+            'VE Venezuela',
+            'ZA South Africa',
+            'ZW Zimbabwe',
+        ];
+
+        [...listHints].forEach( function( listItem ){
+            let countryName = $('<div>');
+            let countryShortName = $('<b>');
+
+            if ( listItem.indexOf('-') > -1 ){
+                countryShortName.text( listItem.slice(0,6) );
+                countryName.text( listItem.slice(6,30) );
+            } else {
+                countryShortName.text( listItem.slice(0,3) );
+                countryName.text( listItem.slice(3,30) );
+            }
+            countryName.prepend(countryShortName);
+            wrapListHints.append(countryName);
+        });
+        wrapListHints.slideToggle('listCountriesHidden');
+    };
 
     let changeCountry = function (){
         let countryInput = $('#inputText');
@@ -59,86 +159,6 @@ $(function() {
     }
 
     inputsDivBtn.on('click', changeCountry);
+    btnHintList.on('click', createHintList);
 
-    //predefinedCountryValues = [
-    //         "AR",
-    //         "AO",
-    //         "AT",
-    //         "AU",
-    //         "AW",
-    //         "AX",
-    //         "BA",
-    //         "BE",
-    //         "BG",
-    //         "BO",
-    //         "BR",
-    //         "BS",
-    //         "CA",
-    //         "CH",
-    //         "CN",
-    //         "CO",
-    //         "CR",
-    //         "CU",
-    //         "CZ",
-    //         "DE",
-    //         "DK",
-    //         "DO",
-    //         "EC",
-    //         "ES",
-    //         "FI",
-    //         "FR",
-    //         "GB",
-    //         "GB-ENG",
-    //         "GB-NIR",
-    //         "GB-SCT",
-    //         "GB-WLS",
-    //         "GR",
-    //         "GT",
-    //         "HK",
-    //         "HN",
-    //         "HR",
-    //         "HU",
-    //         "ID",
-    //         "IE",
-    //         "IN",
-    //         "IL",
-    //         "IS",
-    //         "IT",
-    //         "JP",
-    //         "KZ",
-    //         "LS",
-    //         "LU",
-    //         "MG",
-    //         "MQ",
-    //         "MU",
-    //         "MX",
-    //         "MZ",
-    //         "NG",
-    //         "NL",
-    //         "NO",
-    //         "PE",
-    //         "PK",
-    //         "PH",
-    //         "PL",
-    //         "PR",
-    //         "PT",
-    //         "PY",
-    //         "RE",
-    //         "RO",
-    //         "RU",
-    //         "SC",
-    //         "SE",
-    //         "SG",
-    //         "SI",
-    //         "ST",
-    //         "SK",
-    //         "TN",
-    //         "TR",
-    //         "UA",
-    //         "US",
-    //         "UY",
-    //         "VE",
-    //         "ZA",
-    //         "ZW",
-    //     ];
 });
