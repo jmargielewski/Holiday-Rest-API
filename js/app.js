@@ -4,10 +4,7 @@ $(function() {
     const btnHintList = $('.btnListCountry');
     const listCountriesCloseBtn = $('.listCountriesCloseBtn');
 
-
     let createHintList = function (){
-
-
 
         let wrapListHints = $('.listCountries');
         let countryNamesWraper = $('<div>', { class: 'countryNamesWraper'});
@@ -48,8 +45,10 @@ $(function() {
             countryName.prepend(countryShortName);
             countryNamesWraper.append(countryName);
         });
+        // add div with all divs to hint section
         wrapListHints.append(countryNamesWraper);
         wrapListHints.slideToggle('listCountriesHidden');
+
     };
 
     let removeHintList = function(){
@@ -58,6 +57,10 @@ $(function() {
     }
 
     let changeCountry = function (){
+        
+        // if there is a list of previously searched holidays then remove it
+        $('.holidays').children().remove();
+
         let countryInput = $('#inputText');
         let monthInput = $('#inputMonth');
         let userValueOfCountry = countryInput.val().toUpperCase();
@@ -86,6 +89,7 @@ $(function() {
             };
 
             $('.inputsWrap').nextAll().remove();
+
             createList( urlAPI );
         }
     };
