@@ -22,7 +22,7 @@ header .logo{
 }
 
 main{
-    min-height: 500px;
+    min-height: 520px;
 }
 
 section.inputs{
@@ -134,6 +134,9 @@ section.inputs .inputsWrap .inputsDivBtn{
     right: 10px;
     font-size: 16px;
     color: #ffaa07;
+}
+section.inputs .inputsWrap .inputsDivBtn:hover{
+    cursor: pointer;
 }
 
 .errorEmptyValue{

@@ -48,7 +48,6 @@ $(function() {
         // add div with all divs to hint section
         wrapListHints.append(countryNamesWraper);
         wrapListHints.slideToggle('listCountriesHidden');
-
     };
 
     let removeHintList = function(){
@@ -57,7 +56,7 @@ $(function() {
     }
 
     let changeCountry = function (){
-        
+
         // if there is a list of previously searched holidays then remove it
         $('.holidays').children().remove();
 
@@ -84,7 +83,7 @@ $(function() {
             $('.inputsWrap').after(infoEmpty);
         } else {
 
-            if ( $('.listCountries').css('display') === "block" ){
+            if ( $('.listCountries').css('display') === 'block' ){
                 $('.listCountries').slideUp();
             };
 
